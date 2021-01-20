@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="INTUITIVE">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Map Reduce</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Map-Reduce.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 3.4.0, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    
+    
+    
+    
+    
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"url": "index.html",
+		"logo": "images/9a615495-e994-54bd-27c1-1f75f2364bf2.png"
+}</script>
+    <meta property="og:title" content="Map Reduce">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#478ac9">
+    <link rel="canonical" href="index.html">
+    <meta property="og:url" content="index.html">
+  </head>
+  <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-035a"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="310" data-image-height="163">
+          <img src="images/9a615495-e994-54bd-27c1-1f75f2364bf2.png" class="u-logo-image u-logo-image-1" data-image-width="64">
+        </a>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</symbol>
+</defs></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Apache-Spark.html" style="padding: 10px 20px;">Apache Spark</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Map-Reduce.html" style="padding: 10px 20px;">Map Reduce</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Apache-Spark.html" style="padding: 10px 20px;">Apache Spark</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Map-Reduce.html" style="padding: 10px 20px;">Map Reduce</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-clearfix u-section-1" id="sec-1b25">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-align-center u-heading-font u-text u-text-default u-title u-text-1">Map Reduce</h1>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-2" id="sec-3287">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-align-left u-text u-text-1">Vấn đề với năng lực xử lý của một máy tính</h2>
+        <p class="u-align-left u-text u-text-2">Máy tính mà chúng ta vẫn sử dụng để xử lý dữ liệu hàng ngày có thể được mô tả một cách trừu tượng hoá nhất bằng hình vẽ dưới đây:</p>
+        <img src="https://s3-ap-southeast-1.amazonaws.com/kipalog.com/single%20machine.png_gji8d6mtu9" alt="" class="u-image u-image-default u-image-1" data-image-width="294" data-image-height="402">
+        <p class="u-align-left u-text u-text-3">Theo như hình vẽ chúng ta có: CPU, Memory và đĩa cứng. Theo công nghệ hiện tại mình biết thì mỗi module có các thông số tối đa như sau:<br>&nbsp;- CPU: với máy tính thông thường thì trên 1 board chỉ có 1 đến 2 CPUs. Mỗi CPU có thể có tối đa 18 cores<br>&nbsp;- Memory: trên 1 mainboard có thể cắm tối đa 16 thanh RAM. Mỗi thanh có dung lượng tối từ 8G. Một máy tính có thể có khoảng 8* 16 = 128GB RAM)<br>&nbsp;- Đĩa cứng: dung lượng tối đa của HDD là 8TB<br>Với máy tính với cấu hình dù rất khoẻ như ở trên thì ta vẫn thấy giới hạn xử lý dữ liệu của nó. Cụ thể máy tính không thể lưu trữ được quá 8TB dữ liệu, không thể đồng thời xử lý được dữ liệu lớn hơn 128GB (kích thước của RAM) và không thể đồng thời xử lý được lớn hơn 18 luồng chương trình.
+        </p>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-3" id="sec-bd78">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-text u-text-1">Giải quyết bài toán một máy tính thế nào?</h2>
+        <p class="u-text u-text-2">Như đã tính toán thử ở trên, một máy tính không thể nào xử lý được số lượng dữ liệu lớn như vậy. Điều này dẫn đến 2 đòi hỏi:<br>&nbsp;- Đấu nối nhiều máy tính&nbsp;để cùng xử lý<br>&nbsp;- Tìm ra&nbsp;cách để cho các máy tính cùng xử lý
+        </p>
+        <img src="images/Cluster.png" alt="" class="u-image u-image-default u-image-1" data-image-width="902" data-image-height="518">
+      </div>
+    </section>
+    <section class="u-clearfix u-section-4" id="sec-ecff">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h2 class="u-text u-text-1">Cách để cho các máy tính cùng xử lý (Map-Reduce)</h2>
+        <p class="u-text u-text-2">Phân chia dữ liệu thành nhiều block và chia cho nhiều máy tính lưu trữ (đảm bảo tính toàn vẹn và tính sẵn sàng của dữ liệu).<br>Chuyển tính toán về nơi có dữ liệu.<br>Đưa ra mô hình và giao diện tính toán đơn giản.
+        </p>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-5" id="sec-6128">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-text u-text-1">Chia dữ liệu thành nhiều Block</h3>
+        <p class="u-text u-text-2">GFS là một hệ thống quản lý File phân tán với các chức năng giống như hệ thống File bình thường của Linux như: không gian tên (namespace), tính thừa thãi (redundancy), và tính sẵn sàng (availability).<br>Đặc điểm của hệ thống File phân tán này là:<br>&nbsp;- Dùng để quản lý các File có kích thước lớn: kích thước từ trăm GB đến TB<br>&nbsp;- Dữ liệu ít khi bị cập nhật ở giữa file (kiểu mở file, đến dữa file, cập nhật) mà thường được đọc học ghi vào cuối File (append).<br>GFS được thiết kế bao gốm 2 module:&nbsp;Chunk Server&nbsp;và&nbsp;Master Server.<br>&nbsp;- Chunk Server&nbsp;làm nhiệu vụ lưu trữ các chunk (hay block) dữ liệu. Mỗi chunk có thể của 1 File hay của file khác. Các Chuck dữ liệu được sao chép giữa các máy chủ khác nhau.<br>&nbsp;- Master Server&nbsp;làm nhiệm vụ quản lý metadata cho hệ thống File. Cụ thể Master Server sẽ lưu giữ thông tin như File này có bao nhiêu Chunk và mỗi Chunk sẽ được lưu ở máy chủ nào. Dựa vào thông tin metadata này mà thuật toán tính toán sẽ chuyển tính toán về máy chủ có chunk (sẽ trình bày kỹ hơn)
+        </p>
+        <img src="images/chunk.png" alt="" class="u-image u-image-default u-image-1" data-image-width="516" data-image-height="455">
+      </div>
+    </section>
+    <section class="u-clearfix u-section-6" id="sec-4c2e">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-text u-text-1">Mô hình tính toán</h3>
+        <p class="u-text u-text-2">Ví dụ bài toán đếm từ:<br>Map Reduce chia làm 3 thao tác:&nbsp;<br>&nbsp;- Map: quét file đầu vào và ghi lại từng bản ghi<br>&nbsp;- Group by Key: sắp xếp và trộn dữ liệu cho mỗi bản ghi sinh ra từ<br>&nbsp;- Reduce: tổng hợp, thay đổi hay lọc dữ liệu từ thao tác trước và ghi kết quả ra File.<br>Hình minh hoạ sau làm rõ các bước và nội dung thực hiện ở mỗi bước:<br>
+        </p>
+        <img src="images/MapReduce_Work_Structure.png" alt="" class="u-align-center u-image u-image-default u-image-1" data-image-width="1344" data-image-height="624">
+      </div>
+    </section>
+    <section class="u-clearfix u-section-7" id="sec-a6fc">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-text u-text-1">Tham khảo</h3>
+        <h4 class="u-text u-text-2">https://kipalog.com/posts/Map-Reduce</h4>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-5050"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">CopyRight 2021</p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/website-design" target="_blank">
+        <span>Website Design</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="https://nicepage.com/static-site-generator" target="_blank">
+        <span>Static Website Generator</span>
+      </a>. 
+    </section>
+  </body>
+</html>
