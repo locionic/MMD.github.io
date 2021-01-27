@@ -66,13 +66,12 @@ Giao diện người dùng web ứng dụng tại http: // <driver>: 4040 liệt
 
 Hầu hết các thuộc tính kiểm soát cài đặt nội bộ đều có giá trị mặc định hợp lý. Một số tùy chọn phổ biến nhất để đặt là:
 
-Application Properties
+**Application Properties**
 
-|Tên thuộc tính|Mặc định|Ý nghĩa|Kể từ phiên bản|
+
+|**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
+| :- | :- | :- | :- ||**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
-|spark.app.name|(none)|Tên ứng dụng, sẽ xuất hiện trong giao diện người dùng và trong dữ liệu nhật ký.|0.9.0|
-|||||
-|Tên thuộc tính|Mặc định|Ý nghĩa|Kể từ phiên bản|
 |spark.app.name|(none)|Tên ứng dụng, sẽ xuất hiện trong giao diện người dùng và trong dữ liệu nhật ký.|0.9.0|
 |spark.driver.cores|1|Số lõi để sử dụng cho quy trình trình điều khiển, chỉ ở chế độ cụm.|1.3.0|
 |spark.driver.maxResultSize|1g|Giới hạn tổng kích thước của các kết quả được tuần tự hóa của tất cả các phân vùng cho mỗi hành động Spark (ví dụ: thu thập) tính bằng byte. Tối thiểu phải là 1M hoặc 0 cho không giới hạn. Công việc sẽ bị hủy bỏ nếu tổng kích thước vượt quá giới hạn này. Có giới hạn cao có thể gây ra lỗi hết bộ nhớ trong trình điều khiển (phụ thuộc vào spark.driver.memory và chi phí bộ nhớ của các đối tượng trong JVM). Đặt giới hạn thích hợp có thể bảo vệ trình điều khiển khỏi lỗi hết bộ nhớ.|1.2.0|
@@ -105,8 +104,6 @@ Application Properties
 
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
-|||||
-|**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 |spark.driver.extraClassPath|(không ai)|Các mục nhập classpath bổ sung để thêm trước vào classpath của trình điều khiển.<br>*Lưu ý:* Trong chế độ máy khách, cấu hình này không được đặt thông qua SparkConf trực tiếp trong ứng dụng của bạn, vì trình điều khiển JVM đã bắt đầu tại thời điểm đó. Thay vào đó, hãy đặt điều này thông qua --driver-class-pathtùy chọn dòng lệnh hoặc trong tệp thuộc tính mặc định của bạn.|1.0.0|
 |spark.driver.defaultJavaOptions|(không ai)|Một chuỗi các tùy chọn JVM mặc định để thêm vào spark.driver.extraJavaOptions. Điều này được thiết lập bởi các quản trị viên. Ví dụ: cài đặt GC hoặc ghi nhật ký khác. Lưu ý rằng việc đặt cài đặt kích thước heap tối đa (-Xmx) với tùy chọn này là bất hợp pháp. Cài đặt kích thước đống tối đa có thể được đặt spark.driver.memorytrong chế độ cụm và thông qua --driver-memorytùy chọn dòng lệnh trong chế độ máy khách.<br>*Lưu ý:* Trong chế độ máy khách, cấu hình này không được đặt thông qua SparkConf trực tiếp trong ứng dụng của bạn, vì trình điều khiển JVM đã bắt đầu tại thời điểm đó. Thay vào đó, hãy đặt điều này thông qua --driver-java-optionstùy chọn dòng lệnh hoặc trong tệp thuộc tính mặc định của bạn.|3.0.0|
 |spark.driver.extraJavaOptions|(không ai)|Một chuỗi các tùy chọn JVM bổ sung để chuyển cho người lái xe. Điều này là do người dùng thiết lập. Ví dụ: cài đặt GC hoặc ghi nhật ký khác. Lưu ý rằng việc đặt cài đặt kích thước heap tối đa (-Xmx) với tùy chọn này là bất hợp pháp. Cài đặt kích thước đống tối đa có thể được đặt spark.driver.memorytrong chế độ cụm và thông qua --driver-memorytùy chọn dòng lệnh trong chế độ máy khách.<br>*Lưu ý:* Trong chế độ máy khách, cấu hình này không được đặt thông qua SparkConf trực tiếp trong ứng dụng của bạn, vì trình điều khiển JVM đã bắt đầu tại thời điểm đó. Thay vào đó, hãy đặt điều này thông qua --driver-java-optionstùy chọn dòng lệnh hoặc trong tệp thuộc tính mặc định của bạn. spark.driver.defaultJavaOptionssẽ được thêm vào cấu hình này.|1.0.0|
@@ -138,8 +135,8 @@ Application Properties
 |spark.jars.repositories||Danh sách các kho lưu trữ từ xa bổ sung được phân tách bằng dấu phẩy để tìm kiếm các tọa độ maven được cung cấp với --packageshoặc spark.jars.packages.|2.3.0|
 |spark.pyspark.driver.python||Thực thi nhị phân Python để sử dụng cho PySpark trong trình điều khiển. (mặc định là spark.pyspark.python)|2.1.0|
 |spark.pyspark.python||Thực thi nhị phân Python để sử dụng cho PySpark trong cả trình điều khiển và trình thực thi.|2.1.0|
-###
-### **Shuffle Behavior**
+
+**Shuffle Behavior**
 
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
@@ -162,12 +159,11 @@ Application Properties
 |spark.shuffle.accurateBlockThreshold|100 \* 1024 \* 1024|Ngưỡng tính bằng byte trên đó ghi lại chính xác kích thước của khối xáo trộn trong HighlyCompressedMapStatus. Điều này giúp ngăn chặn OOM bằng cách tránh đánh giá thấp kích thước khối trộn khi tìm nạp khối trộn.|2.2.1|
 |spark.shuffle.registration.timeout|5000|Thời gian chờ tính bằng mili giây để đăng ký dịch vụ trộn bên ngoài.|2.3.0|
 |spark.shuffle.registration.maxAttempts|3|Khi chúng tôi không đăng ký được dịch vụ xáo trộn bên ngoài, chúng tôi sẽ thử lại trong thời gian maxAttempts.|2.3.0|
-###
-### Giao diện ng dùng spark
 
-|<h3></h3>|<h3></h3>|<h3></h3>|<h3></h3>|
-| :- | :- | :- | :- |
+**Giao diện ng dùng spark**
+
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
+| :- | :- | :- | :- |
 |spark.eventLog.logBlockUpdates.enabled|sai|Có ghi lại các sự kiện cho mỗi lần cập nhật khối hay không, nếu spark.eventLog.enabledđúng. \* Cảnh báo \*: Điều này sẽ làm tăng đáng kể kích thước của nhật ký sự kiện.|2.3.0|
 |spark.eventLog.longForm.enabled|sai|Nếu đúng, hãy sử dụng biểu mẫu dài của các trang web cuộc gọi trong nhật ký sự kiện. Nếu không, hãy sử dụng mẫu ngắn.|2.4.0|
 |spark.eventLog.compress|sai|Có nén các sự kiện đã ghi, nếu spark.eventLog.enabledđúng.|1.0.0|
@@ -233,7 +229,8 @@ Application Properties
 |spark.ui.retainedDeadExecutors|100|Có bao nhiêu người thực thi đã chết mà giao diện người dùng Spark và API trạng thái nhớ trước khi thu gom rác.|2.0.0|
 |spark.ui.filters|None|Danh sách tên lớp bộ lọc được phân tách bằng dấu phẩy để áp dụng cho giao diện người dùng Web Spark. Bộ lọc phải là [Bộ lọc servlet javax](http://docs.oracle.com/javaee/6/api/javax/servlet/Filter.html) tiêu chuẩn .<br>Các thông số bộ lọc cũng có thể được chỉ định trong cấu hình, bằng cách thiết lập các mục cấu hình của biểu mẫu spark.<class name of filter>.param.<param name>=<value><br>Ví dụ:<br>spark.ui.filters=com.test.filter1<br>spark.com.test.filter1.param.name1=foo<br>spark.com.test.filter1.param.name2=bar|1.0.0|
 |spark.ui.requestHeaderSize|8k|Kích thước tối đa được phép cho tiêu đề yêu cầu HTTP, tính bằng byte trừ khi được chỉ định khác. Cài đặt này cũng áp dụng cho Máy chủ Lịch sử Spark.|2.2.3|
-### **Compression and Serialization**
+
+**Compression and Serialization**
 
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
@@ -254,7 +251,8 @@ Application Properties
 |spark.rdd.compress|false|Có nén các phân vùng RDD tuần tự (ví dụ: StorageLevel.MEMORY\_ONLY\_SERtrong Java và Scala hoặc StorageLevel.MEMORY\_ONLYtrong Python). Có thể tiết kiệm không gian đáng kể với chi phí tăng thêm thời gian CPU. Nén sẽ sử dụng spark.io.compression.codec.|0.6.0|
 |spark.serializer|org.apache.spark.serializer.<br>JavaSerializer|Lớp sử dụng để tuần tự hóa các đối tượng sẽ được gửi qua mạng hoặc cần được lưu vào bộ nhớ đệm ở dạng tuần tự hóa. Mặc định của tuần tự hóa Java hoạt động với bất kỳ đối tượng Java Serializable nào nhưng khá chậm, vì vậy chúng tôi khuyên bạn nên [sử dụng org.apache.spark.serializer.KryoSerializervà định cấu hình tuần tự hóa Kryo](https://spark.apache.org/docs/latest/tuning.html) khi tốc độ là cần thiết. Có thể là bất kỳ lớp con nào của . [org.apache.spark.Serializer](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/serializer/Serializer.html)|0.5.0|
 |spark.serializer.objectStreamReset|100|Khi tuần tự hóa bằng org.apache.spark.serializer.JavaSerializer, trình tuần tự lưu trữ các đối tượng để ngăn ghi dữ liệu dư thừa, tuy nhiên, việc này sẽ dừng việc thu thập rác của các đối tượng đó. Bằng cách gọi 'đặt lại', bạn xóa thông tin đó khỏi bộ tuần tự và cho phép thu thập các đối tượng cũ. Để tắt đặt lại định kỳ này, hãy đặt nó thành -1. Theo mặc định, nó sẽ đặt lại bộ tuần tự sau mỗi 100 đối tượng.|1.0.0|
-### **Memory Management**
+
+**Memory Management**
 
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
@@ -268,13 +266,11 @@ Application Properties
 |spark.cleaner.referenceTracking.blocking|true|Kiểm soát xem luồng dọn dẹp có chặn các tác vụ dọn dẹp hay không (ngoại trừ việc xáo trộn, được kiểm soát bởi thuộc tính spark.cleaner.referenceTracking.blocking.shuffleSpark).|1.0.0|
 |spark.cleaner.referenceTracking.blocking.shuffle|false|Kiểm soát xem liệu sợi làm sạch có chặn trên các tác vụ dọn dẹp ngẫu nhiên hay không.|1.1.1|
 |spark.cleaner.referenceTracking.cleanCheckpoints|false|Kiểm soát xem có xóa tệp điểm kiểm tra hay không nếu tham chiếu nằm ngoài phạm vi.|1.4.0|
-###
-### **Execution Behavior**
-###
 
-|<h3></h3>|<h3></h3>|<h3></h3>|<h3></h3>|
-| :- | :- | :- | :- |
+**Execution Behavior**
+
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
+| :- | :- | :- | :- |
 |spark.broadcast.blockSize|4m|Kích thước của mỗi phần của khối TorrentBroadcastFactory, tính bằng KiB trừ khi có quy định khác. Giá trị quá lớn làm giảm tính song song trong quá trình phát sóng (làm cho nó chậm hơn); tuy nhiên, nếu nó quá nhỏ, BlockManagercó thể ảnh hưởng đến hiệu suất.|0,5,0|
 |spark.broadcast.checksum|true|Có bật tổng kiểm tra để phát sóng hay không. Nếu được bật, chương trình phát sóng sẽ bao gồm tổng kiểm tra, có thể giúp phát hiện các khối bị hỏng, với chi phí tính toán và gửi thêm một chút dữ liệu. Có thể tắt tính năng này nếu mạng có các cơ chế khác để đảm bảo dữ liệu không bị hỏng trong quá trình phát sóng.|2.1.1|
 |spark.executor.cores|1 in YARN mode, all the available cores on the worker in standalone and Mesos coarse-grained modes.|Số lượng lõi sẽ sử dụng trên mỗi trình thực thi. Trong các chế độ hạt thô và độc lập Mesos, để biết thêm chi tiết, hãy xem [mô tả này](https://spark.apache.org/docs/latest/spark-standalone.html#Executors%20Scheduling) .|1.0.0|
@@ -289,16 +285,16 @@ Application Properties
 |spark.hadoop.validateOutputSpecs|true|Nếu được đặt thành true, xác thực đặc tả đầu ra (ví dụ: kiểm tra xem thư mục đầu ra đã tồn tại chưa) được sử dụng trong saveAsHadoopFile và các biến thể khác. Điều này có thể được tắt để tắt tiếng các ngoại lệ do các thư mục đầu ra đã tồn tại từ trước. Chúng tôi khuyên người dùng không nên tắt tính năng này trừ khi cố gắng đạt được khả năng tương thích với các phiên bản Spark trước đó. Chỉ cần sử dụng API FileSystem của Hadoop để xóa các thư mục đầu ra bằng tay. Cài đặt này bị bỏ qua đối với các công việc được tạo thông qua StreamingContext của Spark Streaming, vì dữ liệu có thể cần được ghi lại vào các thư mục đầu ra đã có trước trong quá trình khôi phục điểm kiểm tra.|1.0.1|
 |spark.storage.memoryMapThreshold|2m|Kích thước của một khối mà trên đó bộ nhớ Spark sẽ ánh xạ khi đọc một khối từ đĩa. Đơn vị mặc định là byte, trừ khi được chỉ định khác. Điều này ngăn Spark lập bản đồ bộ nhớ các khối rất nhỏ. Nói chung, ánh xạ bộ nhớ có chi phí cao cho các khối gần bằng hoặc thấp hơn kích thước trang của hệ điều hành.|0,9,2|
 |spark.hadoop.mapreduce.fileoutputcommitter.algorithm.version|Dependent on environment|Phiên bản thuật toán cam kết đầu ra tệp, số phiên bản thuật toán hợp lệ: 1 hoặc 2. Phiên bản 2 có thể có hiệu suất tốt hơn, nhưng phiên bản 1 có thể xử lý lỗi tốt hơn trong một số trường hợp nhất định, theo [MAPREDUCE-4815](https://issues.apache.org/jira/browse/MAPREDUCE-4815) . Giá trị mặc định phụ thuộc vào phiên bản Hadoop được sử dụng trong môi trường: 1 đối với phiên bản Hadoop thấp hơn 3.0 2 đối với phiên bản Hadoop 3.0 trở lên. Điều quan trọng cần lưu ý là giá trị này có thể thay đổi lại thành 1 trong tương lai sau khi [MAPREDUCE-7282](https://issues.apache.org/jira/browse/MAPREDUCE-7282) được sửa và hợp nhất .|2.2.0|
-###
-### **Executor Metrics**
+
+**Executor Metrics**
 
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
 |spark.eventLog.logStageExecutorMetrics|false|Có ghi các chỉ số cao nhất theo từng giai đoạn của người thực thi (cho mỗi người thực thi) vào nhật ký sự kiện hay không.<br>*Lưu ý:* Các số liệu được thăm dò (thu thập) và gửi trong nhịp tim của người thực thi và điều này luôn được thực hiện; cấu hình này chỉ để xác định xem các đỉnh số liệu tổng hợp có được ghi vào nhật ký sự kiện hay không.|3.0.0|
 |spark.executor.processTreeMetrics.enabled|false|Có thu thập chỉ số cây quy trình (từ hệ thống tệp / proc) khi thu thập chỉ số người thực thi hay không.<br>*Lưu ý:* Số liệu cây quy trình chỉ được thu thập nếu hệ thống tệp / proc tồn tại.|3.0.0|
 |spark.executor.metrics.pollingInterval|0|Tần suất thu thập số liệu của người thực thi (tính bằng mili giây).<br>Nếu 0, việc thăm dò được thực hiện trên nhịp tim của người thực thi (do đó ở khoảng nhịp tim, được chỉ định bởi spark.executor.heartbeatInterval). Nếu tích cực, cuộc thăm dò được thực hiện tại khoảng thời gian này.|3.0.0|
-###
-### **Networking**
+
+**Networking**
 
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
@@ -318,8 +314,8 @@ Application Properties
 |spark.rpc.lookupTimeout|120s|Khoảng thời gian để thao tác tra cứu điểm cuối từ xa RPC chờ trước khi hết thời gian.|1.4.0|
 |spark.core.connection.ack.wait.timeout|spark.network.timeout|Kết nối phải đợi bao lâu cho ack xảy ra trước khi hết thời gian và bỏ cuộc. Để tránh thời gian chờ không mong muốn do tạm dừng lâu như GC, bạn có thể đặt giá trị lớn hơn.|1.1.1|
 |spark.network.maxRemoteBlockSizeFetchToMem|200m|Khối từ xa sẽ được tìm nạp vào đĩa khi kích thước của khối trên ngưỡng này tính bằng byte. Điều này là để tránh một yêu cầu khổng lồ chiếm quá nhiều bộ nhớ. Lưu ý rằng cấu hình này sẽ ảnh hưởng đến cả tìm nạp trộn lẫn tìm nạp khối từ xa của trình quản lý khối. Đối với người dùng đã bật dịch vụ trộn bên ngoài, tính năng này chỉ có thể hoạt động khi dịch vụ trộn bên ngoài ít nhất là 2.3.0.|3.0.0|
-###
-### **Scheduling**
+
+**Scheduling**
 
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
@@ -362,17 +358,16 @@ Application Properties
 |spark.task.reaper.threadDump|true|Khi nào spark.task.reaper.enabled = true, cài đặt này kiểm soát việc kết xuất chuỗi tác vụ có được ghi lại trong quá trình thăm dò định kỳ các tác vụ bị giết hay không. Đặt giá trị này thành false để vô hiệu hóa bộ sưu tập kết xuất chuỗi.|2.0.3|
 |spark.task.reaper.killTimeout|-1|Khi nào spark.task.reaper.enabled = true, cài đặt này chỉ định thời gian chờ mà sau đó JVM của trình thực thi sẽ tự kết thúc nếu một tác vụ bị giết vẫn chưa ngừng chạy. Giá trị mặc định, -1, vô hiệu hóa cơ chế này và ngăn trình thực thi tự hủy. Mục đích của cài đặt này là hoạt động như một mạng lưới an toàn để ngăn các tác vụ không thể hủy bỏ đang chạy khiến trình thực thi không thể sử dụng được.|2.0.3|
 |spark.stage.maxConsecutiveAttempts|4|Số lần thử giai đoạn liên tiếp được phép trước khi một giai đoạn bị hủy bỏ.|2.2.0|
-###
-### **Barrier Execution Mode**
+
+**Barrier Execution Mode**
 
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
 |spark.barrier.sync.timeout|365d|Thời gian chờ tính bằng giây cho mỗi barrier()cuộc gọi từ một nhiệm vụ rào cản. Nếu điều phối viên không nhận được tất cả các thông báo đồng bộ hóa từ các tác vụ rào cản trong thời gian đã định cấu hình, hãy ném SparkException để không thực hiện được tất cả các tác vụ. Giá trị mặc định được đặt thành 31536000 (3600 \* 24 \* 365) nên barrier()cuộc gọi sẽ đợi trong một năm.|2.4.0|
 |spark.scheduler.barrier.maxConcurrentTasksCheck.interval|15s|Thời gian tính bằng giây để chờ giữa lần kiểm tra thất bại các tác vụ đồng thời tối đa và lần kiểm tra tiếp theo. Kiểm tra tối đa các tác vụ đồng thời đảm bảo cụm có thể khởi chạy nhiều tác vụ đồng thời hơn yêu cầu của một giai đoạn rào cản trên công việc được gửi. Việc kiểm tra có thể không thành công trong trường hợp một cụm chỉ mới bắt đầu và không đủ người thực thi đã đăng ký, vì vậy chúng tôi đợi một lúc và thử thực hiện kiểm tra lại. Nếu việc kiểm tra không thành công nhiều hơn số lần thất bại tối đa đã định cấu hình cho một công việc thì không gửi được công việc hiện tại. Lưu ý rằng cấu hình này chỉ áp dụng cho các công việc có chứa một hoặc nhiều giai đoạn rào cản, chúng tôi sẽ không thực hiện kiểm tra các công việc không có rào cản.|2.4.0|
 |spark.scheduler.barrier.maxConcurrentTasksCheck.maxFailures|40|Số lượng tối đa các nhiệm vụ đồng thời kiểm tra lỗi được phép trước khi không gửi được công việc. Kiểm tra tối đa các tác vụ đồng thời đảm bảo cụm có thể khởi chạy nhiều tác vụ đồng thời hơn yêu cầu của một giai đoạn rào cản trên công việc được gửi. Việc kiểm tra có thể không thành công trong trường hợp một cụm chỉ mới bắt đầu và không đủ người thực thi đã đăng ký, vì vậy chúng tôi đợi một lúc và thử thực hiện kiểm tra lại. Nếu việc kiểm tra không thành công nhiều hơn số lần thất bại tối đa đã định cấu hình cho một công việc thì không gửi được công việc hiện tại. Lưu ý rằng cấu hình này chỉ áp dụng cho các công việc có chứa một hoặc nhiều giai đoạn rào cản, chúng tôi sẽ không thực hiện kiểm tra các công việc không có rào cản.|2.4.0|
-###
-### **Dynamic Allocation**
-###
+
+**Dynamic Allocation**
 
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
@@ -387,22 +382,23 @@ Application Properties
 |spark.dynamicAllocation.sustainedSchedulerBacklogTimeout|schedulerBacklogTimeout|Tương tự như spark.dynamicAllocation.schedulerBacklogTimeout, nhưng chỉ được sử dụng cho các yêu cầu của trình thực thi tiếp theo. Để biết thêm chi tiết, hãy xem [mô tả](https://spark.apache.org/docs/latest/job-scheduling.html#resource-allocation-policy) này .|1.2.0|
 |spark.dynamicAllocation.shuffleTracking.enabled|false|Thực nghiệm. Bật theo dõi trộn tệp cho người thực thi, cho phép phân bổ động mà không cần dịch vụ trộn bên ngoài. Tùy chọn này sẽ cố gắng giữ cho những người thực thi còn sống đang lưu trữ dữ liệu xáo trộn cho các công việc đang hoạt động.|3.0.0|
 |spark.dynamicAllocation.shuffleTracking.timeout|infinity|Khi bật tính năng theo dõi xáo trộn, sẽ kiểm soát thời gian chờ cho những người thực thi đang giữ dữ liệu xáo trộn. Giá trị mặc định có nghĩa là Spark sẽ dựa vào các xáo trộn được thu thập rác để có thể giải phóng các trình thực thi. Nếu vì lý do nào đó mà bộ sưu tập rác không dọn dẹp xáo trộn đủ nhanh, thì tùy chọn này có thể được sử dụng để kiểm soát thời điểm hết thời gian thực thi ngay cả khi họ đang lưu trữ dữ liệu xáo trộn.|3.0.0|
-###
-### **Thread Configurations**
-### **Tùy thuộc vào công việc và cấu hình cụm, chúng ta có thể đặt số lượng luồng ở một số vị trí trong Spark để sử dụng hiệu quả các tài nguyên có sẵn nhằm đạt được hiệu suất tốt hơn. Trước Spark 3.0, các cấu hình luồng này áp dụng cho tất cả các vai trò của Spark, chẳng hạn như trình điều khiển, người thực thi, công nhân và chủ. Từ Spark 3.0, chúng ta có thể định cấu hình các luồng ở mức độ chi tiết hơn bắt đầu từ trình điều khiển và trình thực thi. Lấy mô-đun RPC làm ví dụ trong bảng dưới đây. Đối với các mô-đun khác, như xáo trộn, chỉ cần thay thế “rpc” bằng “xáo trộn” trong tên thuộc tính ngoại trừ spark.{driver|executor}.rpc.netty.dispatcher.numThreads, chỉ dành cho mô-đun RPC.**
+
+**Thread Configurations**
+Tùy thuộc vào công việc và cấu hình cụm, chúng ta có thể đặt số lượng luồng ở một số vị trí trong Spark để sử dụng hiệu quả các tài nguyên có sẵn nhằm đạt được hiệu suất tốt hơn. Trước Spark 3.0, các cấu hình luồng này áp dụng cho tất cả các vai trò của Spark, chẳng hạn như trình điều khiển, người thực thi, công nhân và chủ. Từ Spark 3.0, chúng ta có thể định cấu hình các luồng ở mức độ chi tiết hơn bắt đầu từ trình điều khiển và trình thực thi. Lấy mô-đun RPC làm ví dụ trong bảng dưới đây. Đối với các mô-đun khác, như xáo trộn, chỉ cần thay thế “rpc” bằng “xáo trộn” trong tên thuộc tính ngoại trừ spark.{driver|executor}.rpc.netty.dispatcher.numThreads, chỉ dành cho mô-đun RPC.
 
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
 |spark.{driver|executor}.rpc.io.serverThreads|Fall back on spark.rpc.io.serverThreads|Số luồng được sử dụng trong nhóm luồng máy chủ|1.6.0|
 |spark.{driver|executor}.rpc.io.clientThreads|Fall back on spark.rpc.io.clientThreads|Số luồng được sử dụng trong nhóm luồng ứng dụng|1.6.0|
 |spark.{driver|executor}.rpc.netty.dispatcher.numThreads|Fall back on spark.rpc.netty.dispatcher.numThreads|Số luồng được sử dụng trong nhóm luồng của trình điều phối thư RPC|3.0.0|
-### Giá trị mặc định cho số lượng khóa cấu hình liên quan đến luồng là số lõi tối thiểu được yêu cầu cho trình điều khiển hoặc trình thực thi hoặc, nếu không có giá trị đó, số lõi có sẵn cho JVM (với giới hạn trên mã cứng là số 8).
-###
-### **Security**
-###
-### **Spark SQL**
-#### ***Runtime SQL Configuration***
-### **Cấu hình SQL thời gian chạy là cấu hình Spark SQL cho mỗi phiên, có thể thay đổi. Chúng có thể được đặt với các giá trị ban đầu bằng tệp cấu hình và các tùy chọn dòng lệnh có --conf/-ctiền tố hoặc bằng cài đặt SparkConfđược sử dụng để tạo SparkSession. Ngoài ra, chúng có thể được thiết lập và truy vấn bằng lệnh SET và đặt lại giá trị ban đầu của chúng bằng lệnh RESET hoặc bằng SparkSession.confcác phương thức setter và getter của trong thời gian chạy.**
+Giá trị mặc định cho số lượng khóa cấu hình liên quan đến luồng là số lõi tối thiểu được yêu cầu cho trình điều khiển hoặc trình thực thi hoặc, nếu không có giá trị đó, số lõi có sẵn cho JVM (với giới hạn trên mã cứng là số 8).
+
+**Security**
+
+**Spark SQL**
+
+***Runtime SQL Configuration***
+Cấu hình SQL thời gian chạy là cấu hình Spark SQL cho mỗi phiên, có thể thay đổi. Chúng có thể được đặt với các giá trị ban đầu bằng tệp cấu hình và các tùy chọn dòng lệnh có --conf/-ctiền tố hoặc bằng cài đặt SparkConfđược sử dụng để tạo SparkSession. Ngoài ra, chúng có thể được thiết lập và truy vấn bằng lệnh SET và đặt lại giá trị ban đầu của chúng bằng lệnh RESET hoặc bằng SparkSession.confcác phương thức setter và getter của trong thời gian chạy.
 
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
@@ -521,9 +517,9 @@ Application Properties
 |spark.sql.thriftserver.ui.retainedSessions|200|Số phiên máy khách SQL được lưu trong lịch sử giao diện người dùng web JDBC / ODBC.|1.4.0|
 |spark.sql.thriftserver.ui.retainedStatements|200|Số lượng câu lệnh SQL được lưu giữ trong lịch sử giao diện người dùng web JDBC / ODBC.|1.4.0|
 |spark.sql.variable.substitute|true|Điều này cho phép thay thế sử dụng cú pháp như ${var}, ${system:var}, và ${env:var}.|2.0.0|
-###
-#### ***Static SQL Configuration***
-### **Cấu hình SQL tĩnh là cấu hình Spark SQL xuyên phiên, bất biến. Chúng có thể được đặt với các giá trị cuối cùng bằng tệp cấu hình và các tùy chọn dòng lệnh có --conf/-ctiền tố hoặc bằng cài đặt SparkConfđược sử dụng để tạo SparkSession. Người dùng bên ngoài có thể truy vấn các giá trị cấu hình sql tĩnh thông qua SparkSession.confhoặc thông qua lệnh set, ví dụ SET spark.sql.extensions;, nhưng không thể đặt / bỏ đặt chúng.**
+
+***Static SQL Configuration***
+Cấu hình SQL tĩnh là cấu hình Spark SQL xuyên phiên, bất biến. Chúng có thể được đặt với các giá trị cuối cùng bằng tệp cấu hình và các tùy chọn dòng lệnh có --conf/-ctiền tố hoặc bằng cài đặt SparkConfđược sử dụng để tạo SparkSession. Người dùng bên ngoài có thể truy vấn các giá trị cấu hình sql tĩnh thông qua SparkSession.confhoặc thông qua lệnh set, ví dụ SET spark.sql.extensions;, nhưng không thể đặt / bỏ đặt chúng.
 
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
@@ -542,8 +538,8 @@ Application Properties
 |spark.sql.streaming.ui.retainedQueries|100|Số lượng truy vấn không hoạt động cần giữ lại cho Giao diện người dùng phát trực tuyến có cấu trúc.|3.0.0|
 |spark.sql.ui.retainedExecutions|1000|Số lần thực thi cần giữ lại trong giao diện người dùng Spark.|1.5.0|
 |spark.sql.warehouse.dir|(value of $PWD/spark-warehouse)|Vị trí mặc định cho cơ sở dữ liệu và bảng được quản lý.|2.0.0|
-###
-### **Spark Streaming**
+
+**Spark Streaming**
 
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
@@ -559,8 +555,8 @@ Application Properties
 |spark.streaming.ui.retainedBatches|1000|Có bao nhiêu lô giao diện người dùng Spark Streaming và API trạng thái ghi nhớ trước khi thu gom rác.|1.0.0|
 |spark.streaming.driver.writeAheadLog.closeFileAfterWrite|false|Có đóng tệp sau khi ghi bản ghi nhật ký ghi trước trên trình điều khiển. Đặt giá trị này thành 'true' khi bạn muốn sử dụng S3 (hoặc bất kỳ hệ thống tệp nào không hỗ trợ xả) cho siêu dữ liệu WAL trên trình điều khiển.|1.6.0|
 |spark.streaming.receiver.writeAheadLog.closeFileAfterWrite|false|Có đóng tệp sau khi ghi bản ghi nhật ký ghi trước trên máy thu hay không. Đặt giá trị này thành 'true' khi bạn muốn sử dụng S3 (hoặc bất kỳ hệ thống tệp nào không hỗ trợ xả) cho dữ liệu WAL trên bộ thu.|1.6.0|
-###
-### **SparkR**
+
+**SparkR**
 
 |<h3></h3>|<h3></h3>|<h3></h3>|<h3></h3>|
 | :- | :- | :- | :- |
@@ -571,25 +567,24 @@ Application Properties
 |spark.r.shell.command|R|Có thể thực thi để thực thi trình bao sparkR trong các chế độ máy khách cho trình điều khiển. Bỏ qua trong chế độ cụm. Nó giống như biến môi trường SPARKR\_DRIVER\_R, nhưng được ưu tiên hơn nó. spark.r.shell.commandđược sử dụng cho trình bao sparkR trong khi spark.r.driver.commandđược sử dụng để chạy tập lệnh R.|2.1.0|
 |spark.r.backendConnectionTimeout|6000|Thời gian chờ kết nối do quá trình R đặt trên kết nối của nó với RBackend tính bằng giây.|2.1.0|
 |spark.r.heartBeatInterval|100|Khoảng thời gian cho nhịp tim được gửi từ chương trình phụ trợ SparkR đến quy trình R để ngăn kết nối hết thời gian chờ.|2.1.0|
-###
-### **GraphX**
+
+**GraphX**
 
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
 |spark.graphx.pregel.checkpointInterval|-1|Khoảng thời gian điểm kiểm tra cho đồ thị và tin nhắn trong Pregel. Nó được sử dụng để tránh stackOverflowError do chuỗi dòng dõi dài sau nhiều lần lặp lại. Trạm kiểm soát bị tắt theo mặc định.|2.2.0|
-###
-### **Deploy**
+
+**Deploy**
 
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
 |spark.deploy.recoveryMode|NONE|Cài đặt chế độ khôi phục để khôi phục các công việc Spark đã gửi với chế độ cụm khi nó không thành công và khởi chạy lại. Điều này chỉ áp dụng cho chế độ cụm khi chạy với Độc lập hoặc Mesos.|0,8,1|
 |spark.deploy.zookeeper.url|None|Khi `spark.deploy.recoveryMode` được đặt thành ZOOKEEPER, cấu hình này được sử dụng để đặt URL của người giữ vườn thú để kết nối với.|0,8,1|
 |spark.deploy.zookeeper.dir|None|Khi `spark.deploy.recoveryMode` được đặt thành ZOOKEEPER, cấu hình này được sử dụng để đặt thư mục Zookeeper để lưu trữ trạng thái khôi phục.|0,8,1|
-###
-### **Cluster Managers**
-#### Mỗi trình quản lý cụm trong Spark có các tùy chọn cấu hình bổ sung. Bạn có thể tìm thấy cấu hình trên các trang cho từng chế độ:
-#### [***YARN***](https://spark.apache.org/docs/latest/running-on-yarn.html#configuration)
-#### [***Mesos***](https://spark.apache.org/docs/latest/running-on-mesos.html#configuration)
-#### [***Kubernetes***](https://spark.apache.org/docs/latest/running-on-kubernetes.html#configuration)
-#### [***Standalone Mode***](https://spark.apache.org/docs/latest/spark-standalone.html#cluster-launch-scripts)
-###
+
+**Cluster Managers**
+Mỗi trình quản lý cụm trong Spark có các tùy chọn cấu hình bổ sung. Bạn có thể tìm thấy cấu hình trên các trang cho từng chế độ:
+  -***YARN***
+  -***Mesos***
+  -***Kubernetes***
+  -***Standalone Mode***
