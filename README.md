@@ -1,18 +1,18 @@
 <https://spark.apache.org/docs/latest/configuration.html#spark-properties>
 
-[Spark Properties]
+# Spark Properties
 
-- [Dynamically Loading Spark Properties]
-- [Viewing Spark Properties]
-- [Available Properties]
+- Dynamically Loading Spark Properties
+- Viewing Spark Properties
+- Available Properties
 
 Spark properties kiểm soát hầu hết các cài đặt ứng dụng và được cấu hình riêng cho từng ứng dụng. Các thuộc tính này có thể được đặt trực tiếp trên SparkConf và chuyển tới SparkContext. SparkConf cho phép cấu hình một số thuộc tính phổ biến (ví dụ: URL chính và tên ứng dụng), cũng như các cặp khóa-giá trị tùy ý thông qua phương thức set().
 
 Ví dụ:
 
-![](ex2.001.png)
+![](images/ex2.001.png)
 
-Dynamic
+# Dynamic Loading Spark Properties
 
 Trong một số trường hợp  muốn tránh mã hóa cứng các cấu hình nhất định trong SparkConf. Ví dụ: muốn chạy cùng một ứng dụng với các bản chính khác nhau hoặc số lượng bộ nhớ khác nhau. Spark cho phép chỉ cần tạo một conf trống:
 
@@ -20,32 +20,28 @@ Trong một số trường hợp  muốn tránh mã hóa cứng các cấu hình
 
 Sau đó có thể cung cấp các giá trị cấu hình trong runtime:
 
-![](ex2.003.png)
+![](images/ex2.003.png)
 
 Spark shell và spark-submit tool hỗ trợ hai cách để tải cấu hình động. Đầu tiên là các tùy chọn dòng lệnh, chẳng hạn như --master, như hình trên. spark-submit có thể chấp nhận bất kỳ thuộc tính Spark nào sử dụng cờ --conf / -c, nhưng sử dụng cờ đặc biệt cho các thuộc tính đóng một vai trò trong việc khởi chạy ứng dụng Spark. Chạy ./bin/spark-submit --help sẽ hiển thị toàn bộ danh sách các tùy chọn.
 
 bin / spark-submit cũng sẽ đọc các tùy chọn cấu hình từ conf / spark-defaults.conf, trong đó mỗi dòng bao gồm một khóa và một giá trị được phân tách bằng khoảng trắng. Ví dụ:
 
-![](ex2.004.png)
+![](images/ex2.004.png)
 
 Mọi giá trị được chỉ định dưới dạng cờ hoặc trong tệp thuộc tính sẽ được chuyển đến ứng dụng và được hợp nhất với những giá trị được chỉ định thông qua SparkConf. Các thuộc tính được đặt trực tiếp trên SparkConf được ưu tiên cao nhất, sau đó các cờ được chuyển đến spark-submit hoặc spark-shell, sau đó là các tùy chọn trong tệp spark-defaults.conf.
 
 Spark properties chủ yếu có thể được chia thành hai loại: một là liên quan đến triển khai, như “spark.driver.memory”, “spark.executor.instances”, loại thuộc tính này có thể không bị ảnh hưởng khi thiết lập lập trình thông qua SparkConf trong thời gian chạy, hoặc hành vi tùy thuộc vào trình quản lý cụm và chế độ triển khai đã chọn, vì vậy nên đặt thông qua tệp cấu hình hoặc tùy chọn dòng lệnh spark-submit; một loại khác chủ yếu liên quan đến kiểm soát thời gian chạy Spark, như “spark.task.maxFailures”, loại thuộc tính này có thể được đặt theo một trong hai cách.
 
-View
+# Viewing Spark Properties
 
 Giao diện người dùng web ứng dụng tại http: // <driver>: 4040 liệt kê các thuộc tính Spark trong tab "Environment". Đây là một nơi hữu ích để kiểm tra để đảm bảo rằng các thuộc tính đã được đặt chính xác. Lưu ý rằng chỉ các giá trị được chỉ định rõ ràng thông qua spark-defaults.conf, SparkConf hoặc dòng lệnh mới xuất hiện. Đối với tất cả các thuộc tính cấu hình khác có thể giả sử giá trị mặc định được sử dụng.
 
-Available Properties
+# Available Properties
 
 Hầu hết các thuộc tính kiểm soát cài đặt nội bộ đều có giá trị mặc định hợp lý. Một số tùy chọn phổ biến nhất để đặt là:
 
 Application Properties
 
-|Tên thuộc tính|Mặc định|Ý nghĩa|Kể từ phiên bản|
-| :- | :- | :- | :- |
-|spark.app.name|(none)|Tên ứng dụng, sẽ xuất hiện trong giao diện người dùng và trong dữ liệu nhật ký.|0.9.0|
-|||||
 |Tên thuộc tính|Mặc định|Ý nghĩa|Kể từ phiên bản|
 |spark.app.name|(none)|Tên ứng dụng, sẽ xuất hiện trong giao diện người dùng và trong dữ liệu nhật ký.|0.9.0|
 |spark.driver.cores|1|Số lõi để sử dụng cho quy trình trình điều khiển, chỉ ở chế độ cụm.|1.3.0|
