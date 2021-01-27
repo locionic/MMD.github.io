@@ -585,7 +585,7 @@ Cấu hình SQL tĩnh là cấu hình Spark SQL xuyên phiên, bất biến. Ch
 |spark.deploy.zookeeper.dir|None|Khi `spark.deploy.recoveryMode` được đặt thành ZOOKEEPER, cấu hình này được sử dụng để đặt thư mục Zookeeper để lưu trữ trạng thái khôi phục.|0,8,1|
 ###
 ### **Cluster Managers**
-Mỗi trình quản lý cụm trong Spark có các tùy chọn cấu hình bổ sung. Bạn có thể tìm thấy cấu hình trên các trang cho từng chế độ:
+Mỗi trình quản lý cụm trong Spark có các tùy chọn cấu hình bổ sung:
 - ***YARN***
 - ***Mesos***
 - ***Kubernetes***
