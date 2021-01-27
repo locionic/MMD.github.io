@@ -68,9 +68,7 @@ Hầu hết các thuộc tính kiểm soát cài đặt nội bộ đều có gi
 
 **Application Properties**
 
-
 |**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
-| :- | :- | :- | :- ||**Tên tài sản**|**Mặc định**|**Ý nghĩa**|**Kể từ phiên bản**|
 | :- | :- | :- | :- |
 |spark.app.name|(none)|Tên ứng dụng, sẽ xuất hiện trong giao diện người dùng và trong dữ liệu nhật ký.|0.9.0|
 |spark.driver.cores|1|Số lõi để sử dụng cho quy trình trình điều khiển, chỉ ở chế độ cụm.|1.3.0|
