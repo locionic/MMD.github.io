@@ -1,5 +1,3 @@
-<https://spark.apache.org/docs/latest/configuration.html#spark-properties>
-
 # Spark Properties
 
 - Dynamically Loading Spark Properties
@@ -592,3 +590,7 @@ Mỗi trình quản lý cụm trong Spark có các tùy chọn cấu hình bổ 
 - ***Mesos***
 - ***Kubernetes***
 - ***Standalone Mode***
+###
+### **Tham khảo:**
+- <https://spark.apache.org/docs/latest/configuration.html#spark-properties>
+- <https://www.edureka.co/blog/spark-tutorial/>
