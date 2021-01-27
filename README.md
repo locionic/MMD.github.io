@@ -5,6 +5,32 @@
 - Dynamically Loading Spark Properties
 - Viewing Spark Properties
 - Available Properties
+  - Application Properties
+  - Runtime Environment
+  - Shuffle Behavior
+  - Spark UI
+  - Compression and Serialization
+  - Memory Management
+  - Execution Behavior
+  - Executor Metrics
+  - Networking
+  - Scheduling
+  - Barrier Execution Mode
+  - Dynamic Allocation
+  - Thread Configurations
+  - Security
+  - Spark SQL
+    - Runtime SQL Configuration
+    - Static SQL Configuration
+  - Spark Streaming
+  - SparkR
+  - GraphX
+  - Deploy
+  - Cluster Managers
+    - YARN
+    - Mesos
+    - Kubernetes
+    - Standalone Mode
 
 Spark properties kiểm soát hầu hết các cài đặt ứng dụng và được cấu hình riêng cho từng ứng dụng. Các thuộc tính này có thể được đặt trực tiếp trên SparkConf và chuyển tới SparkContext. SparkConf cho phép cấu hình một số thuộc tính phổ biến (ví dụ: URL chính và tên ứng dụng), cũng như các cặp khóa-giá trị tùy ý thông qua phương thức set().
 
@@ -43,6 +69,10 @@ Hầu hết các thuộc tính kiểm soát cài đặt nội bộ đều có gi
 Application Properties
 
 |Tên thuộc tính|Mặc định|Ý nghĩa|Kể từ phiên bản|
+| :- | :- | :- | :- |
+|spark.app.name|(none)|Tên ứng dụng, sẽ xuất hiện trong giao diện người dùng và trong dữ liệu nhật ký.|0.9.0|
+|||||
+|Tên thuộc tính|Mặc định|Ý nghĩa|Kể từ phiên bản|
 |spark.app.name|(none)|Tên ứng dụng, sẽ xuất hiện trong giao diện người dùng và trong dữ liệu nhật ký.|0.9.0|
 |spark.driver.cores|1|Số lõi để sử dụng cho quy trình trình điều khiển, chỉ ở chế độ cụm.|1.3.0|
 |spark.driver.maxResultSize|1g|Giới hạn tổng kích thước của các kết quả được tuần tự hóa của tất cả các phân vùng cho mỗi hành động Spark (ví dụ: thu thập) tính bằng byte. Tối thiểu phải là 1M hoặc 0 cho không giới hạn. Công việc sẽ bị hủy bỏ nếu tổng kích thước vượt quá giới hạn này. Có giới hạn cao có thể gây ra lỗi hết bộ nhớ trong trình điều khiển (phụ thuộc vào spark.driver.memory và chi phí bộ nhớ của các đối tượng trong JVM). Đặt giới hạn thích hợp có thể bảo vệ trình điều khiển khỏi lỗi hết bộ nhớ.|1.2.0|
@@ -69,6 +99,7 @@ Application Properties
 |spark.driver.log.persistToDfs.enabled|false|Nếu đúng, ứng dụng spark đang chạy ở chế độ máy khách sẽ ghi nhật ký trình điều khiển vào kho lưu trữ liên tục, được định cấu hình trong spark.driver.log.dfsDir. Nếu spark.driver.log.dfsDir không được định cấu hình, nhật ký trình điều khiển sẽ không được lưu giữ. Ngoài ra, hãy bật trình dọn dẹp bằng cách đặt spark.history.fs.driverlog.cleaner.enabled thành true trong Spark History Server.|3.0.0|
 |spark.driver.log.layout|%d{yy/MM/dd HH:mm:ss.SSS} %t %p %c{1}: %m%n|Bố cục cho nhật ký trình điều khiển được đồng bộ hóa với spark.driver.log.dfsDir. Nếu điều này không được định cấu hình, nó sẽ sử dụng bố cục cho appender đầu tiên được xác định trong log4j.properties. Nếu điều đó cũng không được định cấu hình, nhật ký trình điều khiển sử dụng bố cục mặc định.|3.0.0|
 |spark.driver.log.allowErasureCoding|false|Có cho phép nhật ký trình điều khiển sử dụng mã xóa hay không. Trên HDFS, các tệp được mã hóa xóa sẽ không cập nhật nhanh chóng như các tệp được sao chép thông thường, do đó, chúng mất nhiều thời gian hơn để phản ánh các thay đổi do ứng dụng viết. Lưu ý rằng ngay cả khi điều này là đúng, Spark vẫn sẽ không buộc tệp sử dụng mã hóa xóa, nó sẽ chỉ sử dụng mặc định của hệ thống tệp.|3.0.0|
+
 
 **Runtime Environment**
 
