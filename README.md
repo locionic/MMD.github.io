@@ -16,7 +16,7 @@ Dynamic
 
 Trong một số trường hợp  muốn tránh mã hóa cứng các cấu hình nhất định trong SparkConf. Ví dụ: muốn chạy cùng một ứng dụng với các bản chính khác nhau hoặc số lượng bộ nhớ khác nhau. Spark cho phép chỉ cần tạo một conf trống:
 
-![](ex2.002.png)
+![](images/ex2.002.png)
 
 Sau đó có thể cung cấp các giá trị cấu hình trong runtime:
 
