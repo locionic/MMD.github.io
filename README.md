@@ -1,10 +1,10 @@
 <https://spark.apache.org/docs/latest/configuration.html#spark-properties>
 
-[Spark Properties](https://spark.apache.org/docs/latest/configuration.html#spark-properties)
+[Spark Properties]
 
-- [Dynamically Loading Spark Properties](https://spark.apache.org/docs/latest/configuration.html#dynamically-loading-spark-properties)
-- [Viewing Spark Properties](https://spark.apache.org/docs/latest/configuration.html#viewing-spark-properties)
-- [Available Properties](https://spark.apache.org/docs/latest/configuration.html#available-properties)
+- [Dynamically Loading Spark Properties]
+- [Viewing Spark Properties]
+- [Available Properties]
 
 Spark properties kiểm soát hầu hết các cài đặt ứng dụng và được cấu hình riêng cho từng ứng dụng. Các thuộc tính này có thể được đặt trực tiếp trên SparkConf và chuyển tới SparkContext. SparkConf cho phép cấu hình một số thuộc tính phổ biến (ví dụ: URL chính và tên ứng dụng), cũng như các cặp khóa-giá trị tùy ý thông qua phương thức set().
 
