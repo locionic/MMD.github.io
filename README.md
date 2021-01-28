@@ -561,23 +561,23 @@ Cả hai ứng dụng Lặp (Iterative) và Tương tác (Interactive) đều y�
 
 **- Iterative Operation trên MapReduce:**
 
-![https://laptrinh.vn/uploads/images/gallery/2019-10/iterative\_operations\_on\_mapreduce.jpg](ex2-final.005.jpeg)
+![](ex2-final.005.jpeg)
 
 **- Interactive Operations trên MapReduce:**
 
-![interactive\_operations\_on\_mapreduce.jpg (600×248)](ex2-final.006.jpeg)
+![](ex2-final.006.jpeg)
 ##### **Thực thi trên Spark RDD**
 Để khắc phục được vấn đề về MapRedure, các nhà nghiên cứu đã phát triển một framework chuyên biệt gọi là Apache Spark. Ý tưởng chính của Spark là Resilient Distributed Datasets (RDD); nó hỗ trợ tính toán xử lý trong bộ nhớ. Điều này có nghĩa, nó lưu trữ trạng thái của bộ nhớ dưới dạng một đối tượng trên các công việc và đối tượng có thể chia sẻ giữa các công việc đó. Việc xử lý dữ liệu trong bộ nhớ nhanh hơn 10 đến 100 lần so với network và disk.
 
 **- Iterative Operation trên Spark RDD:**
 
-![https://laptrinh.vn/uploads/images/gallery/2019-10/iterative\_operations\_on\_spark\_rdd.jpg](ex2-final.007.jpeg)
+![](ex2-final.007.jpeg)
 
 **- Interactive Operations trên Spark RDD:**
 
-![https://laptrinh.vn/uploads/images/gallery/2019-10/interactive\_operations\_on\_spark\_rdd.jpg](ex2-final.008.jpeg)
+![](ex2-final.008.jpeg)
 ##### **Các loại RDD**
-![https://laptrinh.vn/uploads/images/gallery/2019-10/spark-rdds.png](ex2-final.009.png)
+![](ex2-final.009.png)
 
 Các RDD biểu diễn một tập hợp cố định, đã được phân vùng các record để có thể xử lý song song.
 
