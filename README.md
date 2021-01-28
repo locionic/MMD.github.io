@@ -1,4 +1,4 @@
-﻿# [**Spark Properties**](https://spark.apache.org/docs/latest/configuration.html#spark-properties)
+﻿# **Spark Properties**
 - Dynamically Loading Spark Properties
 - Viewing Spark Properties
 - Available Properties
