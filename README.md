@@ -33,23 +33,23 @@ Spark properties kiểm soát hầu hết các cài đặt ứng dụng và đư
 
 Ví dụ:
 
-![](ex2-final.001.png)
+![](images/ex2-final.001.png)
 
 **Dynamically Loading Spark Properties:**
 
 Trong một số trường hợp muốn tránh mã hóa cứng các cấu hình nhất định trong SparkConf. Ví dụ: muốn chạy cùng một ứng dụng với các bản chính khác nhau hoặc số lượng bộ nhớ khác nhau. Spark cho phép chỉ cần tạo một conf trống:
 
-![](ex2-final.002.png)
+![](images/ex2-final.002.png)
 
 Sau đó có thể cung cấp các giá trị cấu hình trong runtime:
 
-![](ex2-final.003.png)
+![](images/ex2-final.003.png)
 
 Spark shell và spark-submit tool hỗ trợ hai cách để tải cấu hình động. Đầu tiên là các tùy chọn dòng lệnh, chẳng hạn như --master, như hình trên. spark-submit có thể chấp nhận bất kỳ thuộc tính Spark nào sử dụng cờ --conf / -c, nhưng sử dụng cờ đặc biệt cho các thuộc tính đóng một vai trò trong việc khởi chạy ứng dụng Spark. Chạy ./bin/spark-submit --help sẽ hiển thị toàn bộ danh sách các tùy chọn.
 
 bin / spark-submit cũng sẽ đọc các tùy chọn cấu hình từ conf / spark-defaults.conf, trong đó mỗi dòng bao gồm một khóa và một giá trị được phân tách bằng khoảng trắng. Ví dụ:
 
-![](ex2-final.004.png)
+![](images/ex2-final.004.png)
 
 Mọi giá trị được chỉ định dưới dạng cờ hoặc trong tệp thuộc tính sẽ được chuyển đến ứng dụng và được hợp nhất với những giá trị được chỉ định thông qua SparkConf. Các thuộc tính được đặt trực tiếp trên SparkConf được ưu tiên cao nhất, sau đó các cờ được chuyển đến spark-submit hoặc spark-shell, sau đó là các tùy chọn trong tệp spark-defaults.conf.
 
@@ -598,19 +598,19 @@ Các ví dụ trong python:
 
 `	`Tạo rdd:
 
-![](ex2-final.010.png)
+![](images/ex2-final.010.png)
 
 `	`Sử dụng Map:
 
-![](ex2-final.011.png)
+![](images/ex2-final.011.png)
 
 `	`Sử dụng Collect:
 
-![](ex2-final.012.png)
+![](images/ex2-final.012.png)
 
 `	`Sử dụng Reduce:
 
-![](ex2-final.013.png)
+![](images/ex2-final.013.png)
 
 
 # **DataFrame**
@@ -622,23 +622,23 @@ Thực hành:
 
 `	`Tạo dataframe từ rdd:
 
-![](ex2-final.014.png)
+![](images/ex2-final.014.png)
 
 `	`Tạo dataframe từ việc sử dụng hàm createDataFrame() của SparkSession:
 
-![](ex2-final.015.png)
+![](images/ex2-final.015.png)
 
 `	`Tạo dataframe từ list collection:
 
-![](ex2-final.016.png)
+![](images/ex2-final.016.png)
 
 `	`Tạo dataframe với schema:
 
-![](ex2-final.017.png)
+![](images/ex2-final.017.png)
 
 `	`Tạo dataframe với các file: json, csv, text
 
-![](ex2-final.018.png)
+![](images/ex2-final.018.png)
 
 **Tham khảo:**
 
